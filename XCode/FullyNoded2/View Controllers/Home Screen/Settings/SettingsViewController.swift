@@ -7,16 +7,28 @@
 //
 import UIKit
 
-class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var doneBlock : ((Bool) -> Void)?
     let ud = UserDefaults.standard
     @IBOutlet var settingsTable: UITableView!
     
+    // TEST
+    var pickerView: UIPickerView!
+    var localeConfig = LocaleConfig()
+    //var pickerData = ["USD", "AUD", "CAD"]
+    // TEST
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         settingsTable.delegate = self
+        
+        // TEST
+        pickerView = UIPickerView(frame: CGRect(x: 10, y: 50, width: 250, height: 150))
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        // TEST
         
     }
 
@@ -72,11 +84,21 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             return settingsCell
             
         case 2:
+            thumbnail.image = UIImage(systemName: "desktopcomputer")
+            label.text = "Currency"
+            return settingsCell
+            
+        case 3:
+            thumbnail.image = UIImage(systemName: "desktopcomputer")
+            label.text = "Pricing Server"
+            return settingsCell
+            
+        case 4:
             thumbnail.image = UIImage(systemName: "exclamationmark.triangle")
             label.text = "Delete Core Data"
             return settingsCell
             
-        case 3:
+        case 5:
             thumbnail.image = UIImage(systemName: "exclamationmark.triangle")
             label.text = "Delete Keychain Items"
             return settingsCell
@@ -92,7 +114,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 4
+        return 6
         
     }
     
@@ -153,10 +175,18 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             nodeManager()
             
         case 2:
+            
+            currencySelector()
+        
+        case 3:
+            
+            segueToPrice()
+            
+        case 4:
         
             resetApp()
             
-        case 3:
+        case 5:
             
             promptToDeleteKeychain()
             
@@ -218,6 +248,46 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    func currencySelector() {
+        
+        DispatchQueue.main.async { [unowned vc = self] in
+        
+            vc.showupAlert()
+            
+        }
+        
+    }
+    
+    // TEST
+    func showupAlert() {
+        let ac = UIAlertController(title: "Picker", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+        let defaultIndex = localeConfig.currencyList.firstIndex(of: localeConfig.savedLocale) ?? 0
+        pickerView.selectRow(defaultIndex, inComponent: 0, animated: true)
+        ac.view.addSubview(pickerView)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            let pickerValue = self.localeConfig.currencyList[self.pickerView.selectedRow(inComponent: 0)]
+            self.localeConfig.changeLocale(newLocale: pickerValue)
+            print("New currency: \(pickerValue).")
+            print(self.localeConfig.savedLocale)
+            print(UserDefaults.standard.string(forKey: "currentLocale")!)
+        }))
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(ac, animated: true)
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return localeConfig.currencyList.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(localeConfig.currencyList[row])"
+    }
+    // TEST
+    
     func nodeManager() {
         
         DispatchQueue.main.async { [unowned vc = self] in
@@ -236,6 +306,15 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
         }
         
+    }
+    
+    func segueToPrice() {
+        
+        DispatchQueue.main.async { [unowned vc = self] in
+            
+            vc.performSegue(withIdentifier: "segueToPrice", sender: vc)
+        
+        }
     }
     
 }

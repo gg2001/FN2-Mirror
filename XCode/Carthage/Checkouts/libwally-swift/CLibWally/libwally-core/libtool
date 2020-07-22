@@ -1,6 +1,6 @@
 #! /bin/sh
 # Generated automatically by config.status (libwallycore) 0.7.7
-# Libtool was configured on host DIRECT-8A-HP-OfficeJet-4650.local:
+# Libtool was configured on host MacBook:
 # NOTE: Changes made to this file will be lost: look at ltmain.sh.
 
 # Provide generalized library-building support services.
@@ -72,8 +72,8 @@ host_os=darwin14
 
 # The build system.
 build_alias=
-build=x86_64-apple-darwin19.4.0
-build_os=darwin19.4.0
+build=x86_64-apple-darwin19.3.0
+build_os=darwin19.3.0
 
 # A sed program that does not truncate output.
 SED="/usr/bin/sed"
@@ -165,7 +165,7 @@ lock_old_archive_extraction=yes
 LTCC="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
 
 # LTCC compiler flags.
-LTCFLAGS="-O3 -arch arm64 -arch arm64e -arch armv7 -arch armv7s -fembed-bitcode -mios-version-min=10.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.4.sdk"
+LTCFLAGS="-O3 -arch arm64 -arch arm64e -arch armv7 -arch armv7s -fembed-bitcode -mios-version-min=10.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.5.sdk"
 
 # Take the output of nm and produce a listing of raw symbols and C names.
 global_symbol_pipe="sed -n -e 's/^.*[	 ]\\([BCDEGRST][BCDEGRST]*\\)[	 ][	 ]*_\\([_A-Za-z][_A-Za-z0-9]*\\)\$/\\1 _\\2 \\2/p' | sed '/ __gnu_lto/d'"

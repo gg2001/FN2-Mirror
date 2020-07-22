@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C61ADC7724C66162009D6540 /* LocaleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61ADC7624C66162009D6540 /* LocaleConfig.swift */; };
+		C637E3A924C807DE00449CFF /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637E3A824C807DE00449CFF /* PriceViewController.swift */; };
 		D00016B3245ABFFA0091F7CF /* Import.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00016B2245ABFFA0091F7CF /* Import.swift */; };
 		D00016B5245BBB5C0091F7CF /* SeedStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00016B4245BBB5C0091F7CF /* SeedStruct.swift */; };
 		D00016B7245BC49B0091F7CF /* SeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00016B6245BC49B0091F7CF /* SeedsViewController.swift */; };
@@ -180,6 +182,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C61ADC7624C66162009D6540 /* LocaleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleConfig.swift; sourceTree = "<group>"; };
+		C637E3A824C807DE00449CFF /* PriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PriceViewController.swift; path = FullyNoded2/PriceViewController.swift; sourceTree = SOURCE_ROOT; };
 		D00016B2245ABFFA0091F7CF /* Import.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Import.swift; sourceTree = "<group>"; };
 		D00016B4245BBB5C0091F7CF /* SeedStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedStruct.swift; sourceTree = "<group>"; };
 		D00016B6245BC49B0091F7CF /* SeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedsViewController.swift; sourceTree = "<group>"; };
@@ -531,6 +535,7 @@
 		D09D728C23F0F3BF00847DC8 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				C637E3A824C807DE00449CFF /* PriceViewController.swift */,
 				D09D729523F0F3BF00847DC8 /* NodeManagerViewController.swift */,
 				D09D72A123F0F3BF00847DC8 /* SettingsViewController.swift */,
 			);
@@ -683,6 +688,7 @@
 				D047DE0E242DDEB3004BC26D /* LocalNode.swift */,
 				D006E34A243ED2FE007B1A5B /* Keychain.swift */,
 				D0502FED244D2D4A00213870 /* FiatConverter.swift */,
+				C61ADC7624C66162009D6540 /* LocaleConfig.swift */,
 				D00016B8245BD89C0091F7CF /* SeedParser.swift */,
 				D07399D6245E6E5600860B7E /* Broadcast.swift */,
 				D07399E024617A0F00860B7E /* FullyNoded2-Bridging-Header.h */,
@@ -1069,6 +1075,7 @@
 				D0BFDF572490B6A600EB7846 /* LockedUtxoStruct.swift in Sources */,
 				D09D724B23F0EDBB00847DC8 /* FullyNoded2.xcdatamodeld in Sources */,
 				D0CA541324065C650096EE26 /* WalletRecoverViewController.swift in Sources */,
+				C637E3A924C807DE00449CFF /* PriceViewController.swift in Sources */,
 				D09D731223F0F3C000847DC8 /* SeedViewController.swift in Sources */,
 				D0C20EE924A82B7000C62AA4 /* TransactionFetcher.swift in Sources */,
 				D056500A2442C58200754ACF /* WordRecoveryViewController.swift in Sources */,
@@ -1112,6 +1119,7 @@
 				D09D731823F0F3C000847DC8 /* NodeManagerViewController.swift in Sources */,
 				D09D733E23F0F3C000847DC8 /* MnemonicCreator.swift in Sources */,
 				D09D734223F0F3C000847DC8 /* QuickConnect.swift in Sources */,
+				C61ADC7724C66162009D6540 /* LocaleConfig.swift in Sources */,
 				D0D5E63D24A07E4600F3783C /* WalletStatus.swift in Sources */,
 				D09D735D23F0F3C000847DC8 /* CustomButton.swift in Sources */,
 				D047DE0D242D984E004BC26D /* RefillSingleSig.swift in Sources */,
