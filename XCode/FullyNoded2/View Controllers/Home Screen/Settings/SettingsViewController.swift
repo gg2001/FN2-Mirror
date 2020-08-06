@@ -260,7 +260,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     // TEST
     func showupAlert() {
-        let ac = UIAlertController(title: "Picker", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Currency", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
         let defaultIndex = localeConfig.currencyList.firstIndex(of: localeConfig.savedLocale) ?? 0
         pickerView.selectRow(defaultIndex, inComponent: 0, animated: true)
         ac.view.addSubview(pickerView)
