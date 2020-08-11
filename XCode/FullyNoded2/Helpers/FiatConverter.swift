@@ -20,6 +20,7 @@ class FiatConverter {
         let torClient = TorClient.sharedInstance
         let url = NSURL(string: "http://km3danfmt7aiqylbq5lhyn53zhv2hhbmkr6q5pjc64juiyuxuhcsjwyd.onion/now/AUD/binance")
         
+        
         let task = torClient.session.dataTask(with: url! as URL) { (data, response, error) -> Void in
             
             do {
